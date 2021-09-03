@@ -98,12 +98,6 @@ To build the site, run:
 npm run docs
 ```
 
-To serve the site locally, run:
-
-```bash
-npm run docs:serve
-```
-
 To watch the site files, and re-build automatically, run:
 
 ```bash
