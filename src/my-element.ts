@@ -7,12 +7,9 @@
 import {LitElement, html, css} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
-/**
- * An example element.
- *
- * @slot - This element has a slot
- * @csspart button - The button
- */
+ /**
+   * Class representing custom element
+   */
 @customElement('my-element')
 export class MyElement extends LitElement {
   static styles = css`
@@ -24,18 +21,21 @@ export class MyElement extends LitElement {
     }
   `;
 
-  /**
-   * The name to say "Hello" to.
-   */
-  @property()
+/**
+ * @property name to say "Hello" to.
+ */
+  @property({type: String})
   name = 'World';
 
   /**
-   * The number of times the button has been clicked.
+   * @property count number of times the button has been clicked.
    */
   @property({type: Number})
   count = 0;
 
+  /**
+   * Render custom element.
+   */
   render() {
     return html`
       <h1>Hello, ${this.name}!</h1>
@@ -46,10 +46,16 @@ export class MyElement extends LitElement {
     `;
   }
 
+  /**
+   * Callback when user click button.
+   */
   private _onClick() {
     this.count++;
   }
 
+  /**
+   * Foo method.
+   */
   foo(): string {
     return 'foo';
   }
